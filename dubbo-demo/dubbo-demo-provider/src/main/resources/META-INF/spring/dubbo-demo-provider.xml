@@ -24,7 +24,7 @@ limitations under the License.
     <!-- provider's application name, used for tracing dependency relationship -->
     <dubbo:application name="demo-provider" logger="jcl"/>
 
-    <dubbo:provider delay="-1" retries="0"  >
+    <dubbo:provider delay="-1" retries="0">
         <!--<dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService" protocol="pb" />-->
     </dubbo:provider>
 
@@ -68,7 +68,8 @@ limitations under the License.
         <!--<dubbo:method name="callbackParam">-->
             <!--<dubbo:argument callback="true" type="com.alibaba.dubbo.demo.ParamCallback" />-->
         <!--</dubbo:method>-->
-        <dubbo:method name="say01" deprecated="true" />
+        <dubbo:method name="say01" deprecated="true" >
+        </dubbo:method>
 
 
     </dubbo:service>

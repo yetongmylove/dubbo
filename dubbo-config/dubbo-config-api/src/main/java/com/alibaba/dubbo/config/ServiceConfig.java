@@ -602,7 +602,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         // 创建 Dubbo URL 对象
         URL url = new URL(name, host, port, (contextPath == null || contextPath.length() == 0 ? "" : contextPath + "/") + path, map);
 
-        // 配置规则，参见《配置规则》https://dubbo.gitbooks.io/dubbo-user-book/demos/config-rule.html
+        // 配置规则，参见《配置规则》https://dubbo.gitbooks.io/dubbo-url = {URL@2761} "dubbo://192.168.103.3:20880/com.alibaba.dubbo.demo.DemoService?accesslog=true&anyhost=true&application=demo-provider&bind.ip=192.168.103.3&bind.port=20880&callbacks=1000&default.delay=-1&default.retries=0&delay=-1&deprecated=false&dubbo=2.0.0&generic=false&group=g1&interface=com.alibaba.dubbo.demo.DemoService&logger=jcl&methods=callbackParam,sayHello,save,update,say03,delete,demo,say04,say01,say02,bye,hello02,saves,hello01,hello&pid=17360&qos.port=22222&say01.deprecated=true&server=netty4&service.filter=demo&side=provider&timeout=200000&timestamp=1594620190435"user-book/demos/config-rule.html
         // TODO 8038 ServiceConfig 为啥判断了 url.protocol
         if (ExtensionLoader.getExtensionLoader(ConfiguratorFactory.class).hasExtension(url.getProtocol())) {
             url = ExtensionLoader.getExtensionLoader(ConfiguratorFactory.class).getExtension(url.getProtocol()).getConfigurator(url).configure(url);

@@ -105,7 +105,7 @@ public abstract class AbstractConfig implements Serializable {
     }
 
     /**
-     * 配置对象的编号
+     * 配置对象的编号，用于对象之间的引用
      */
     protected String id;
 
@@ -255,6 +255,7 @@ public abstract class AbstractConfig implements Serializable {
                         && method.getParameterTypes().length == 0
                         && isPrimitive(method.getReturnType())) { // 方法为获取基本类型，public 的 getting 方法。
                     Parameter parameter = method.getAnnotation(Parameter.class);
+                    //  方法返回值是Object    或者@Parameter的excluded=true
                     if (method.getReturnType() == Object.class || parameter != null && parameter.excluded()) {
                         continue;
                     }

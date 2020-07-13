@@ -54,7 +54,7 @@ public interface Invocation {
     Object[] getArguments();
 
     /**
-     * get attachments.
+     * get attachments.隐式参数
      *
      * @return attachments.
      * @serial
