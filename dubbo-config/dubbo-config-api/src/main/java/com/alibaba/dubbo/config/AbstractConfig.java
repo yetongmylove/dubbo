@@ -93,6 +93,7 @@ public abstract class AbstractConfig implements Serializable {
         legacyProperties.put("dubbo.service.url", "dubbo.service.address");
     }
 
+    //  关闭jvm时执行的操作
     static {
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
@@ -154,6 +155,7 @@ public abstract class AbstractConfig implements Serializable {
                     String value = null;
                     if (config.getId() != null && config.getId().length() > 0) {
                         String pn = prefix + config.getId() + "." + property; // 带有 `Config#id`
+                        //  系统变量
                         value = System.getProperty(pn);
                         if (!StringUtils.isBlank(value)) {
                             logger.info("Use System Property " + pn + " to config dubbo");

@@ -54,6 +54,7 @@ public abstract class AbstractProtocol implements Protocol {
 
     /**
      * 服务键
+     * 格式为 ${group}/${interface}:${version}:${port}
      *
      * @param url URL
      * @return 服务键字符串

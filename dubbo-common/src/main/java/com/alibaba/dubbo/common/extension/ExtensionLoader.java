@@ -784,6 +784,7 @@ public class ExtensionLoader<T> {
     private Map<String, Class<?>> getExtensionClasses() {
         // 从缓存中，获得拓展实现类数组
         Map<String, Class<?>> classes = cachedClasses.get();
+        //  dcl 双层检查锁
         if (classes == null) {
             synchronized (cachedClasses) {
                 classes = cachedClasses.get();

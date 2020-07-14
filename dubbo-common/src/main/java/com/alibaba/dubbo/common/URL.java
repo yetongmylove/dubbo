@@ -1231,7 +1231,7 @@ public final class URL implements Serializable {
     /**
      * 获得 Service 键
      *
-     * 格式为 格式为 ${group}/${interface}:${version}
+     * 格式为 ${group}/${interface}:${version}
      * 和 {@link StringUtils#getServiceKey(Map)} 一致
      *
      * @return 键

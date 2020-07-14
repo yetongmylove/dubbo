@@ -43,6 +43,8 @@ public class ClassLoaderFilter implements Filter {
         Thread.currentThread().setContextClassLoader(invoker.getInterface().getClassLoader());
         // 服务调用
         try {
+            //  1.执行invoker.invoke(invocation)，将结果压栈
+            //  2.执行finally语句，然后执行return，将栈中的结果返回
             return invoker.invoke(invocation);
         } finally {
             // 切换当前线程的类加载器为原来的类加载器

@@ -61,6 +61,7 @@ public class ExecuteLimitFilter implements Filter {
             // 服务调用
             return invoker.invoke(invocation);
         } catch (Throwable t) {
+            //  执行完finally后再throw
             isSuccess = false; // 标记失败
             if (t instanceof RuntimeException) {
                 throw (RuntimeException) t;
