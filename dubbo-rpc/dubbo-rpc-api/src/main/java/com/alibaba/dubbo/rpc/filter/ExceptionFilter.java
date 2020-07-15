@@ -130,6 +130,7 @@ public class ExceptionFilter implements Filter {
                     }
 
                     // 否则，包装成RuntimeException抛给客户端
+                    //  防止客户端反序列化失败
                     // otherwise, wrap with RuntimeException and throw back to the client
                     return new RpcResult(new RuntimeException(StringUtils.toString(exception)));
                 } catch (Throwable e) {

@@ -37,6 +37,7 @@ public class EchoFilter implements Filter {
     public Result invoke(Invoker<?> invoker, Invocation inv) throws RpcException {
         // 方法名为 `$echo` ，参数只有一个
         if (inv.getMethodName().equals(Constants.$ECHO) && inv.getArguments() != null && inv.getArguments().length == 1) {
+            //  直接返回方法参数
             return new RpcResult(inv.getArguments()[0]);
         }
         return invoker.invoke(inv);

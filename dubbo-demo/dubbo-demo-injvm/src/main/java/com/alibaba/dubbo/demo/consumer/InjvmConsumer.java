@@ -17,11 +17,7 @@
 package com.alibaba.dubbo.demo.consumer;
 
 import com.alibaba.dubbo.demo.DemoService;
-import com.alibaba.dubbo.demo.entity.User;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class InjvmConsumer {
 
@@ -59,45 +55,5 @@ public class InjvmConsumer {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-
-        try {
-            demoService.demo(null, null, null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            List<User> users = new ArrayList<User>();
-            users.add(new User());
-            demoService.saves(users.toArray(new User[0]));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-        try {
-            User updateUser = new User();
-            demoService.delete(updateUser, null);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-//            User saveUser = new User().setUsername("123");
-            User saveUser = new User();
-            demoService.save(saveUser);
-            demoService.save(saveUser);
-            demoService.save(saveUser);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        try {
-            User updateUser = new User().setUsername("123");
-            demoService.update(updateUser);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }
